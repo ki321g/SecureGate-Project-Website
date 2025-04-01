@@ -109,34 +109,6 @@ const LeftSection = () => {
                 {link.title}
             </Button>
             ))}
-
-            {/* {developer.links.map((link, index) => (
-              <Button
-                key={index}
-                variant="contained"
-                size="small" // Changed from default to small
-                startIcon={link.icon}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                fullWidth
-                sx={{
-                  py: 1, // Reduced padding from 1.5 to 1
-                  textTransform: 'none',
-                  borderRadius: 2,
-                  fontWeight: 'bold',
-                  boxShadow: 1, // Reduced shadow from 2 to 1
-                  fontSize: '0.85rem', // Smaller font size
-                  transition: 'all 0.3s',
-                  '&:hover': {
-                    transform: 'translateY(-2px)', // Reduced movement from -3px to -2px
-                    boxShadow: 3, // Reduced shadow from 4 to 3
-                  }
-                }}
-              >
-                {link.title}
-              </Button>
-            ))} */}
           </Box>
         </Grid>
       </Grid>
@@ -161,18 +133,18 @@ const LeftSection = () => {
           }}>
             <Work sx={{ mr: 1 }} />
             <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
-              Project
+              Commercial Title
             </Typography>
           </Box>
-          <Box sx={{ display: 'flex', alignItems: 'center', ml: 24}}>
-                <SecurityOutlined sx={{ fontSize: { xs: 25, sm: 35, md: 40 }, marginRight: 1,}}/>
+          <Box sx={{ display: 'flex', justifyContent: 'center',}}>
+                <SecurityOutlined sx={{ fontSize: { xs: 30, sm: 40, md: 50 }, marginRight: 1,}}/>
                 <Typography 
                     variant="h6" 
                     gutterBottom
                     sx={{
-                    fontSize: { xs: 15, sm: 25, md: 30 },
+                    fontSize: { xs: 20, sm: 30, md: 40 },
                     fontWeight: '900',
-                    mb: 0, 
+                    mb: 0,
                     }}  
                 >
                     {developer.commercialTitle}
@@ -189,14 +161,18 @@ const LeftSection = () => {
             color: 'primary.main'
           }}>
             <School sx={{ mr: 1 }} />
-            <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
-              Description
+            <Typography variant="h6" 
+                sx={{ 
+                    fontWeight: 'bold',
+                }}>
+                Academic Title
             </Typography>
           </Box>
           <Typography variant="body1" sx={{ 
             ml: 4,
             color: 'text.secondary',
-            lineHeight: 1.6
+            lineHeight: 1.6,
+            fontSize: { xs: 10, sm: 15, md: 25 } 
           }}>
             {developer.academicTitle}
           </Typography>
