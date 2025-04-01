@@ -16,21 +16,21 @@ const RightSection = () => {
       title: 'GitHub',
       description: 'View the source code repository',
       icon: <GitHub fontSize="large" />,
-      link: 'https://github.com',
+      link: 'https://github.com/ki321g/SecureGate',
       color: '#333333'
     },
     {
       title: 'Planning',
       description: 'See the project planning documentation',
       icon: <Assignment fontSize="large" />,
-      link: '/planning',
+      link: 'https://trello.com/b/EV3ZwiZu',
       color: '#4285F4'
     },
     {
       title: 'Report',
       description: 'Read the full project report',
       icon: <Description fontSize="large" />,
-      link: '/report',
+      link: 'https://github.com/ki321g/SecureGate/tree/main/Documentation',
       color: '#0F9D58'
     }
   ];
