@@ -137,7 +137,7 @@ const LeftSection = () => {
             </Typography>
           </Box>
           <Box sx={{ display: 'flex', justifyContent: 'center',}}>
-                <SecurityOutlined sx={{ fontSize: { xs: 30, sm: 40, md: 50 }, marginRight: 1,}}/>
+                <SecurityOutlined sx={{ fontSize: { xs: 30, sm: 40, md: 60 }, marginRight: 1,}}/>
                 <Typography 
                     variant="h6" 
                     gutterBottom
@@ -172,7 +172,9 @@ const LeftSection = () => {
             ml: 4,
             color: 'text.secondary',
             lineHeight: 1.6,
-            fontSize: { xs: 10, sm: 15, md: 25 } 
+            fontSize: { xs: 10, sm: 15, md: 25 },
+            pb: 1,
+            mb: 1.8
           }}>
             {developer.academicTitle}
           </Typography>

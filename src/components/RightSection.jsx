@@ -10,28 +10,32 @@ const RightSection = () => {
       description: 'Watch the demo video of this project',
       icon: <YouTube fontSize="large" />,
       link: 'https://youtube.com',
-      color: '#FF0000'
+      color: '#FF0000',
+      bgColor: '#1e1e1e'
     },
     {
       title: 'GitHub',
       description: 'View the source code repository',
       icon: <GitHub fontSize="large" />,
       link: 'https://github.com/ki321g/SecureGate',
-      color: '#333333'
+      color: '#333333',
+      bgColor: '#1e1e1e'
     },
     {
       title: 'Planning',
       description: 'See the project planning documentation',
       icon: <Assignment fontSize="large" />,
       link: 'https://trello.com/b/EV3ZwiZu',
-      color: '#4285F4'
+      color: '#4285F4',
+      bgColor: '#1e1e1e'
     },
     {
       title: 'Report',
       description: 'Read the full project report',
       icon: <Description fontSize="large" />,
       link: 'https://github.com/ki321g/SecureGate/tree/main/Documentation',
-      color: '#0F9D58'
+      color: '#0F9D58',
+      bgColor: '#1e1e1e'
     }
   ];
 
@@ -46,7 +50,7 @@ const RightSection = () => {
       {/* Project Description Section */}
       <Grid container spacing={3}>
         <Grid item xs={12}>
-          <Paper elevation={2} sx={{ p: 2, mb: 3 }}>
+          <Paper elevation={2} sx={{ p: 2, mb: 3, }}>
             {/* <Typography variant="h4" gutterBottom>
               SecureGate Project
             </Typography> */}
@@ -65,14 +69,16 @@ const RightSection = () => {
       {/* Cards Section - First Row */}
       <Grid container spacing={3} sx={{ mb: 3 }}>
         {cards.slice(0, 2).map((card, index) => (
-          <Grid item xs={12} sm={6} key={index}>
+          <Grid item xs={12} sm={6} key={index} >
             <Card 
-              sx={{ 
+              sx={{
                 height: '100%',
-                transition: 'transform 0.3s, box-shadow 0.3s',
+                backgroundColor: card.bgColor || 'background.paper',
+                transition: 'transform 0.3s, box-shadow 0.3s, background-color 0.3s',
                 '&:hover': {
                   transform: 'translateY(-8px)',
                   boxShadow: 8,
+                  backgroundColor: '#90caf9'
                 }
               }}
             >
@@ -94,17 +100,34 @@ const RightSection = () => {
                     color: card.color, 
                     mb: 2,
                     transform: 'scale(1.5)',
-                    transition: 'transform 0.3s',
+                    transition: 'transform 0.3s, filter 0.3s',
+                    filter: 'drop-shadow(0 0 3px rgba(255, 255, 255, 0.3))',
                     '.MuiCardActionArea-root:hover &': {
-                      transform: 'scale(1.8)',
+                        transform: 'scale(1.8)',
+                        filter: `drop-shadow(0 0 6px ${card.color})`,
                     }
                   }}>
                     {card.icon}
                   </Box>
-                  <Typography variant="h5" component="div" gutterBottom>
+                  <Typography variant="h5" component="div" gutterBottom
+                    sx={{
+                    fontSize: { xs: 20, sm: 30, md: 30 },
+                    fontWeight: '900',
+                    mb: 0,
+                    '.MuiCardActionArea-root:hover &': {
+                      color: '#373737'  // White text on hover
+                    }
+                    }}>
                     {card.title}
                   </Typography>
-                  <Typography variant="body2" color="text.secondary">
+                  <Typography variant="body2" color="text.secondary"
+                    sx={{
+                        transition: 'color 0.3s',
+                        '.MuiCardActionArea-root:hover &': {
+                        color: '#373737'  // White text on hover
+                        }
+                    }}
+                    >
                     {card.description}
                   </Typography>
                 </CardContent>
@@ -121,10 +144,12 @@ const RightSection = () => {
             <Card 
               sx={{ 
                 height: '100%',
-                transition: 'transform 0.3s, box-shadow 0.3s',
+                backgroundColor: card.bgColor || 'background.paper',
+                transition: 'transform 0.3s, box-shadow 0.3s, background-color 0.3s',
                 '&:hover': {
                   transform: 'translateY(-8px)',
                   boxShadow: 8,
+                  backgroundColor: '#90caf9'
                 }
               }}
             >
@@ -142,7 +167,7 @@ const RightSection = () => {
                   textAlign: 'center',
                   p: 3
                 }}>
-                  <Box sx={{ 
+                  {/* <Box sx={{ 
                     color: card.color, 
                     mb: 2,
                     transform: 'scale(1.5)',
@@ -150,13 +175,40 @@ const RightSection = () => {
                     '.MuiCardActionArea-root:hover &': {
                       transform: 'scale(1.8)',
                     }
-                  }}>
+                  }}> */}
+                  <Box sx={{ 
+                    color: card.color, 
+                    mb: 2,
+                    transform: 'scale(1.5)',
+                    transition: 'transform 0.3s, filter 0.3s',
+                    filter: 'drop-shadow(0 0 3px rgba(255, 255, 255, 0.3))',
+                    '.MuiCardActionArea-root:hover &': {
+                        transform: 'scale(1.8)',
+                        filter: `drop-shadow(0 0 6px ${card.color})`,
+                    }
+                   }}>
                     {card.icon}
                   </Box>
-                  <Typography variant="h5" component="div" gutterBottom>
+                  <Typography variant="h5" component="div" gutterBottom
+                    sx={{
+                    fontSize: { xs: 20, sm: 30, md: 30 },
+                    fontWeight: '900',
+                    mb: 0,
+                    '.MuiCardActionArea-root:hover &': {
+                      color: '#373737'  // White text on hover
+                    }
+                    }}
+                  >
                     {card.title}
                   </Typography>
-                  <Typography variant="body2" color="text.secondary">
+                  <Typography variant="body2" color="text.secondary"
+                    sx={{
+                        transition: 'color 0.3s',
+                        '.MuiCardActionArea-root:hover &': {
+                        color: '#373737'  
+                        }
+                    }}
+                    >
                     {card.description}
                   </Typography>
                 </CardContent>
