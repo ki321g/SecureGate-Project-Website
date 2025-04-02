@@ -11,8 +11,8 @@ function App() {
   const [enableDetectFace, setEnableDetectFace] = useState(false);
 
   // Estimate header and footer heights - adjust these values based on your actual components
-  const headerHeight = 100;
-  const footerHeight = 50; // Estimate for footer height
+  const headerHeight = 40;
+  const footerHeight = 40; // Estimate for footer height
 
   return (
     <>
@@ -23,13 +23,14 @@ function App() {
           top: 0,
           left: 0,
           right: 0,
-          height: 100,
+          height: 80,
           width: '100%',
           backgroundColor: 'background.paper',
           zIndex: 1100,
           display: 'flex',
           justifyContent: 'center',
-          py: 2,
+          pt: "10px",
+          pb: "12px",
           boxShadow: 2
         }}
       >
@@ -80,13 +81,15 @@ function App() {
           bottom: 0,
           left: 0,
           right: 0,
-          height: footerHeight,
+          height: "45px",
+          // height: footerHeight,
           width: '100%',
           backgroundColor: 'background.paper',
           zIndex: 1100,
           display: 'flex',
           justifyContent: 'center',
-          py: 2,
+          pt: 0,
+          pb: 0,
           boxShadow: '0 -2px 4px rgba(0,0,0,0.1)' // Shadow on top instead of bottom
         }}
       >

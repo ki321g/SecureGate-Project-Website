@@ -10,11 +10,11 @@ const styles = {
     alignItems: 'center'
   },
   securityIcon: {
-    fontSize: { xs: 60, sm: 80, md: 100 },
+    fontSize: { xs: 60, sm: 80, md: 90 },
     color: 'primary.main'
   },
   headerText: {
-    fontSize: { xs: 40, sm: 60, md: 80 },
+    fontSize: { xs: 40, sm: 60, md: 70 },
     color: 'primary.main',
     alignItems: 'center',
     fontWeight: '900',

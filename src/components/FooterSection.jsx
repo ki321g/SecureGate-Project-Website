@@ -4,7 +4,7 @@ import { SecurityOutlined } from '@mui/icons-material'
 
 const FooterSection = () => {
   return (
-    <Grid container spacing={2} sx={{ maxWidth: 'xl', width: '100%' }}>
+    <Grid container spacing={2} sx={{ maxWidth: 'xl', width: '100%'}}>
       <Grid item xs={12} md={6} sx={{ display: 'flex', justifyContent: 'center' }}>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <SecurityOutlined sx={{ fontSize: { xs: 25, sm: 35, md: 40 }, marginRight: 1, color: 'primary.main', }} />
@@ -28,6 +28,7 @@ const FooterSection = () => {
           sx={{
             fontWeight: '800',
             textAlign: 'center',
+            color: 'text.secondary',
             pt: 2
           }}
         >
