@@ -56,16 +56,27 @@ const RightSection = () => {
                 borderRadius: 2,
                 boxShadow: 1
             }}>
-            {/* <Typography variant="h4" gutterBottom>
-              SecureGate Project
-            </Typography> */}
-            <Typography variant="body1" paragraph>
+            <Typography variant="body1" paragraph sx={{ 
+                textAlign: 'left',
+                ml: 1,
+                color: 'text.secondary',
+                lineHeight: 1.4,
+                fontSize: { xs: 10, sm: 12, md: 18 },
+              }}
+            >
               SecureGate is an innovative security management system designed to provide robust access control and monitoring capabilities. 
               The platform integrates cutting-edge authentication methods with user-friendly interfaces to ensure maximum security without compromising on usability.
             </Typography>
-            <Typography variant="body1">
-              This project demonstrates the implementation of modern security practices, real-time monitoring, and responsive design principles.
-              The system is built using React for the frontend and incorporates Material UI for a clean, professional appearance.
+            <Typography variant="body1"sx={{ 
+                textAlign: 'left',
+                ml: 1,
+                color: 'text.secondary',
+                lineHeight: 1.4,
+                fontSize: { xs: 10, sm: 12, md: 18 },
+              }}
+            >
+              This project demonstrates the implementation of multi factor authentication with a card reader, pin entry, and facial recognition.
+              The system is built using Python FastAPI for the backend, SupaBase for a Realtime DB, React for the frontend and incorporates Material UI for a clean, professional appearance.
             </Typography>
           </Paper>
         </Grid>
