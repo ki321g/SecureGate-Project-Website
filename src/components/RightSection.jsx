@@ -11,7 +11,7 @@ const RightSection = () => {
       icon: <YouTube fontSize="large" />,
       link: 'https://youtube.com',
       color: '#FF0000',
-      bgColor: '#1e1e1e'
+      bgColor: '#0a0a0a'
     },
     {
       title: 'GitHub',
@@ -19,7 +19,7 @@ const RightSection = () => {
       icon: <GitHub fontSize="large" />,
       link: 'https://github.com/ki321g/SecureGate',
       color: '#333333',
-      bgColor: '#1e1e1e'
+      bgColor: '#0a0a0a'
     },
     {
       title: 'Planning',
@@ -27,7 +27,7 @@ const RightSection = () => {
       icon: <Assignment fontSize="large" />,
       link: 'https://trello.com/b/EV3ZwiZu',
       color: '#4285F4',
-      bgColor: '#1e1e1e'
+      bgColor: '#0a0a0a'
     },
     {
       title: 'Report',
@@ -35,7 +35,7 @@ const RightSection = () => {
       icon: <Description fontSize="large" />,
       link: 'https://github.com/ki321g/SecureGate/tree/main/Documentation',
       color: '#0F9D58',
-      bgColor: '#1e1e1e'
+      bgColor: '#0a0a0a'
     }
   ];
 
@@ -44,13 +44,18 @@ const RightSection = () => {
       p: 3, 
       height: '100%',
       display: 'flex',
-      flexDirection: 'column',
-      
+      flexDirection: 'column',      
     }}>
       {/* Project Description Section */}
       <Grid container spacing={3}>
         <Grid item xs={12}>
-          <Paper elevation={2} sx={{ p: 2, mb: 3, }}>
+          <Paper elevation={2} sx={{  
+                p: 2, 
+                mb: 3,
+                backgroundColor: 'background.dark',
+                borderRadius: 2,
+                boxShadow: 1
+            }}>
             {/* <Typography variant="h4" gutterBottom>
               SecureGate Project
             </Typography> */}
@@ -73,7 +78,7 @@ const RightSection = () => {
             <Card 
               sx={{
                 height: '100%',
-                backgroundColor: card.bgColor || 'background.paper',
+                backgroundColor: card.bgColor || 'background.dark',
                 transition: 'transform 0.3s, box-shadow 0.3s, background-color 0.3s',
                 '&:hover': {
                   transform: 'translateY(-8px)',
@@ -144,7 +149,7 @@ const RightSection = () => {
             <Card 
               sx={{ 
                 height: '100%',
-                backgroundColor: card.bgColor || 'background.paper',
+                backgroundColor: card.bgColor || 'background.dark',
                 transition: 'transform 0.3s, box-shadow 0.3s, background-color 0.3s',
                 '&:hover': {
                   transform: 'translateY(-8px)',
