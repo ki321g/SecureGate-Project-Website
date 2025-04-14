@@ -172,7 +172,7 @@ const LeftSection = () => {
             ml: 4,
             color: 'text.secondary',
             lineHeight: 1.6,
-            fontSize: { xs: 10, sm: 15, md: 25 },
+            fontSize: { xs: 16, sm: 18, md: 25 },
             pb: 1,
             mb: 1.8
           }}>
