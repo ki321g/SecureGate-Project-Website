@@ -1,17 +1,30 @@
-import React from 'react';
-import { Paper, Typography, Box, Grid, Card, CardContent, CardActionArea, Link } from '@mui/material';
-import { GitHub, YouTube, Assignment, Description } from '@mui/icons-material';
+import React, { useState } from 'react';
+import { Paper, Typography, Box, Grid, Card, CardContent, CardActionArea, Link, Modal, IconButton } from '@mui/material';
+import { GitHub, YouTube, Assignment, Description, Close } from '@mui/icons-material';
 
 const RightSection = () => {
+  // Add state for modal
+  const [modalOpen, setModalOpen] = useState(false);
+  
+  const handleOpenModal = (e) => {
+    e.preventDefault();
+    setModalOpen(true);
+  };
+  
+  const handleCloseModal = () => {
+    setModalOpen(false);
+  };
+
   // Card data
   const cards = [
     {
       title: 'YouTube',
       description: 'Watch the demo video of this project',
       icon: <YouTube fontSize="large" />,
-      link: 'https://youtube.com',
+      link: 'https://youtu.be/NhTK9tTKvMk',
       color: '#FF0000',
-      bgColor: '#0a0a0a'
+      bgColor: '#0a0a0a',
+      action: handleOpenModal // Add custom action for YouTube card
     },
     {
       title: 'GitHub',
@@ -38,6 +51,22 @@ const RightSection = () => {
       bgColor: '#0a0a0a'
     }
   ];
+
+  // YouTube video modal style
+  const modalStyle = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: { xs: '90%', sm: '80%', md: '70%' },
+    maxWidth: 900,
+    bgcolor: 'primary.main', // Your chosen background color
+    boxShadow: 24,
+    p: 4,
+    borderRadius: 2,
+    outline: 'none',
+    position: 'relative', // Add this to make absolute positioning work relative to the modal
+  };
 
   return (
     <Paper elevation={3} sx={{ 
@@ -104,6 +133,7 @@ const RightSection = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 sx={{ height: '100%' }}
+                onClick={card.action} // Use custom action if provided
               >
                 <CardContent sx={{ 
                   display: 'flex', 
@@ -183,15 +213,6 @@ const RightSection = () => {
                   textAlign: 'center',
                   p: 3
                 }}>
-                  {/* <Box sx={{ 
-                    color: card.color, 
-                    mb: 2,
-                    transform: 'scale(1.5)',
-                    transition: 'transform 0.3s',
-                    '.MuiCardActionArea-root:hover &': {
-                      transform: 'scale(1.8)',
-                    }
-                  }}> */}
                   <Box sx={{ 
                     color: card.color, 
                     mb: 2,
@@ -233,6 +254,57 @@ const RightSection = () => {
           </Grid>
         ))}
       </Grid>
+
+      {/* YouTube Video Modal */}
+      <Modal
+        open={modalOpen}
+        onClose={handleCloseModal}
+        aria-labelledby="youtube-video-modal"
+        aria-describedby="modal-displaying-youtube-video"
+      >
+        <Box sx={modalStyle}>
+          {/* Position the close button absolutely */}
+          <IconButton 
+            onClick={handleCloseModal} 
+            aria-label="close"
+            sx={{
+              position: 'absolute',
+              top: -16,
+              right: -16,
+              color: 'black',
+              backgroundColor: 'rgba(255, 0, 0, 0.6)',
+              '&:hover': {
+                backgroundColor: 'rgba(255, 0, 0, 0.8)',
+              },
+              zIndex: 1,
+            }}
+          >
+            <Close />
+          </IconButton>
+          
+          <Box sx={{ 
+            position: 'relative',
+            paddingTop: '56.25%', // 16:9 aspect ratio
+            width: '100%',
+            overflow: 'hidden'
+          }}>
+            <iframe
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                border: 'none'
+              }}
+              src="https://www.youtube.com/embed/NhTK9tTKvMk"
+              title="SecureGate Project Demo"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </Box>
+        </Box>
+      </Modal>
     </Paper>
   );
 };
