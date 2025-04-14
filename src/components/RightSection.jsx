@@ -90,7 +90,7 @@ const RightSection = () => {
                 ml: 1,
                 color: 'text.secondary',
                 lineHeight: 1.4,
-                fontSize: { xs: 16, sm: 18, md: 20 },
+                fontSize: { xs: 16, sm: 18, md: 18 },
               }}
             >
               SecureGate is an innovative security management system designed to provide robust access control and monitoring capabilities. 
@@ -101,7 +101,7 @@ const RightSection = () => {
                 ml: 1,
                 color: 'text.secondary',
                 lineHeight: 1.4,
-                fontSize: { xs: 16, sm: 18, md: 20 },
+                fontSize: { xs: 16, sm: 18, md: 18 },
               }}
             >
               This project demonstrates the implementation of multi factor authentication with a card reader, pin entry, and facial recognition.
